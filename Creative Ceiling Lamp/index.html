@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceiling Lamp - CSS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" class="switch" id="switch-id" onchange="toggleText()">
+    <div class="lamp">
+        <div class="light"></div>
+    </div>
+    <div class="switch-msg"><p id="switch-msg-id">Click Lamp to Switch</p></div>
+
+    <footer><p class="footer-msg" id="footer-msg-id">MunialoJr - Blakland Graphics</p></footer>
+
+    <script>
+        function toggleText() {
+          var footerElement = document.getElementById("footer-msg-id");
+          var switchElement = document.getElementById("switch-msg-id");
+          var checkbox = document.getElementById("switch-id");
+          var body = document.body;
+      
+          if (checkbox.checked) {
+            // If checkbox is checked, show/hide the text
+            footerElement.style.opacity = 1;
+            switchElement.style.opacity = 0;
+
+            body.classList.add("custom-background"); // Add light background class
+          } else {
+            // If checkbox is unchecked, hide/show the text
+            footerElement.style.opacity = 0;
+            switchElement.style.opacity = 1;
+
+            body.classList.remove("custom-background"); // Remove light background class
+          }
+        }
+      </script>
+</body>
+</html>
